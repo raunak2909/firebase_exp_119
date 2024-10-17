@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_exp_119/firebase_options.dart';
+import 'package:firebase_exp_119/login_page.dart';
 import 'package:firebase_exp_119/note_model.dart';
 import 'package:firebase_exp_119/signup_page.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SignUpPage(),
+      home: LoginPage(),
     );
   }
 }

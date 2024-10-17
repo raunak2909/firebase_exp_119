@@ -72,9 +72,9 @@ class SignUpPage extends StatelessWidget {
                       ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(content: Text('Success: User with ${userCred.user!.uid} registered successfully!!')));
 
-
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage(uid: userCred.user!.uid),));
-
+                      Navigator.pop(context);
+                      /*Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage(uid: userCred.user!.uid),));
+*/
 
                     } on FirebaseAuthException catch(e){
                       if (e.code == 'weak-password') {
@@ -97,7 +97,12 @@ class SignUpPage extends StatelessWidget {
                       content: Text('Please fill all the required blanks!!')));
                 }
               },
-              child: Text('Register'))
+              child: Text('Register')),
+          InkWell(
+            onTap: (){
+              Navigator.pop(context);
+            },
+              child: Text('Already have an Account, Login now..'))
         ],
       ),
     );
